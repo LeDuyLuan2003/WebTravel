@@ -6,9 +6,7 @@
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <!-- Đã bỏ font-awesome và DataTables vì không cần thiết -->
     <link rel="stylesheet" th:href="@{/css/layout-admin.css}">
 </head>
 <body>
@@ -23,28 +21,23 @@
                 </a>
             </div>
             <ul class="nav">
-
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/employees}">
-                        <i class="fas fa-users"></i>
                         <p>Employees</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/customers}">
-                        <i class="fas fa-user"></i>
                         <p>Customers</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/category}">
-                        <i class="fas fa-box"></i>
                         <p>Categories</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/tour}">
-                        <i class="fas fa-box"></i>
                         <p>Tours</p>
                     </a>
                 </li>
@@ -53,7 +46,6 @@
                         <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
                     </form>
                     <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i>
                         <p>Đăng xuất</p>
                     </a>
                 </li>
@@ -66,7 +58,7 @@
         <nav class="navbar">
             <a class="navbar-brand" th:href="@{/admin}">Dashboard</a>
             <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i>
+                <span>☰</span>
             </button>
         </nav>
         <!-- Content -->
@@ -83,8 +75,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script>
     function toggleSidebar() {
         document.querySelector('.sidebar').classList.toggle('active');

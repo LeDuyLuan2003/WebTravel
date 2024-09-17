@@ -30,19 +30,19 @@ public class HomeController {
     // Display a list of all products
     @GetMapping
     public String showProductList(Model model) {
-        model.addAttribute("products", tourService.getAllProducts());
+        model.addAttribute("tours", tourService.getAllProducts());
         return "/users/home";
     }
     @GetMapping("/search")
     public String searchProductsByName(@RequestParam("name") String name, Model model) {
         List<Tour> searchResults = tourService.findProductsByName(name);
-        model.addAttribute("products", searchResults);
-        return "/products/home"; // Template dùng cho người dùng
+        model.addAttribute("tours", searchResults);
+        return "/users/home"; // Template dùng cho người dùng
     }
     @GetMapping("/companyIntroduction")
     public String companyIntroduction(Model model) {
 
-        return "/products/home"; // Template dùng cho người dùng
+        return "/users/home"; // Template dùng cho người dùng
     }
     @RequestMapping("/403")
     public String accessDenied() {
